@@ -1,0 +1,18 @@
+<dl id="<%%= dom_id <%= singular_name %> %>">
+<% attributes.reject(&:password_digest?).each do |attribute| -%>
+  <div>
+    <dt><%= attribute.human_name %>:</dt>
+<% if attribute.attachment? -%>
+    <dd>
+      <%%= link_to <%= singular_name %>.<%= attribute.column_name %>.filename, <%= singular_name %>.<%= attribute.column_name %> if <%= singular_name %>.<%= attribute.column_name %>.attached? %>
+    </dd>
+<% elsif attribute.attachments? -%>
+    <%% <%= singular_name %>.<%= attribute.column_name %>.each do |<%= attribute.singular_name %>| %>
+      <dd><%%= link_to <%= attribute.singular_name %>.filename, <%= attribute.singular_name %> %></dd>
+    <%% end %>
+<% else -%>
+    <dd><%%= <%= singular_name %>.<%= attribute.column_name %> %></dd>
+<% end -%>
+  </div>
+<% end -%>
+</dl>

@@ -1,0 +1,9 @@
+<header class="page-title">
+  <h1><%= human_name %></h1>
+  <nav>
+    <%%= link_to "Edit", <%= edit_helper(type: :path) %>, class: "btn btn-outline btn-primary" %>
+    <%%= button_to "Remove", <%= model_resource_name(prefix: "@") %>, method: :delete, class: "btn btn-outline btn-error" %>
+  </nav>
+</header>
+
+<%%= render @<%= singular_table_name %> %>

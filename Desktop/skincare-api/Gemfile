@@ -1,0 +1,70 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby File.read(".ruby-version").strip
+
+gem "bootsnap", require: false
+gem "pg"
+gem "puma"
+gem "rails"
+gem "redis"
+gem "stimulus-rails"
+gem "turbo-rails"
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
+
+gem "dry-initializer"
+gem "dry-matcher"
+gem "dry-monads"
+gem "dry-rails"
+gem "dry-struct"
+gem "dry-types"
+gem "heroicon"
+gem "high_voltage"
+gem "honeybadger"
+gem "premailer-rails"
+gem "propshaft"
+gem "pundit"
+gem "sidekiq"
+gem "simple_form"
+gem "title"
+gem "view_component"
+gem "vite_rails"
+
+group :production do
+  gem "rack-canonical-host"
+  gem "rack-timeout"
+  gem "secure_headers"
+end
+
+group :development, :test do
+  gem "awesome_print"
+  gem "brakeman"
+  gem "bullet"
+  gem "bundler-audit", require: false
+  gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "dotenv-rails", require: "dotenv/rails-now"
+  gem "factory_bot_rails"
+  gem "ffaker"
+  gem "rspec-rails"
+  gem "rubocop-inhouse", require: false
+end
+
+group :test do
+  gem "capybara"
+  gem "launchy"
+  gem "selenium-webdriver"
+  gem "shoulda-matchers"
+  gem "timecop"
+  gem "webmock"
+end
+
+group :development do
+  gem "actioncable"
+  gem "letter_opener_web"
+  gem "listen"
+  gem "lookbook"
+  gem "syntax_suggest"
+  gem "web-console"
+end

@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --spacing-xs: clamp(0.5rem, 1%, 1rem);
+    --spacing-sm: clamp(0.75rem, 3%, 1.2rem);
+    --spacing-md: clamp(1.25rem, 6%, 2.5rem);
+    --spacing-lg: clamp(3rem, 12%, 6rem);
+    --spacing-xl: clamp(6rem, 24%, 12rem);
+  }
+}
+
+@layer base {
+  html, body {
+    @apply font-sans;
+    @apply bg-base-200;
+  }
+
+  body {
+    @apply font-sans text-base-content;
+    @apply min-h-screen;
+  }
+
+  main {
+    @apply my-auto;
+    min-height: calc(100vh - 4rem);
+  }
+
+  table tbody td,
+  table thead th {
+    @apply border;
+  }
+
+  th:last-child,
+  td:last-child {
+    @apply text-right;
+  }
+
+  a > svg {
+    @apply inline-block;
+  }
+}
+
+/* Layout */
+@layer components {
+  .flex-responsive {
+    @apply flex-col md:flex-row;
+  }
+}
+
+@layer base {
+  /* Typography */
+  .h1 {
+    @apply text-3xl md:text-5xl;
+  }
+
+  .h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  .h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  .h4 {
+    @apply text-base md:text-lg;
+  }
+
+  .h5 {
+    @apply text-base md:text-base;
+  }
+
+  .text-light {
+    @apply text-base-content/80;
+  }
+
+  .heading-sm {
+    @apply h3 font-semibold;
+  }
+
+  .heading {
+    @apply h2 font-semibold;
+  }
+
+  .heading-lg {
+    @apply h1 font-bold;
+  }
+
+  .subtitle {
+    @apply text-light;
+  }
+}
+
+@layer components {
+  .list {
+    @apply border rounded divide-y;
+  }
+
+  .list-item {
+    @apply p-xs;
+  }
+
+  .descriptive-list {
+    @apply divide-y border-y;
+  }
+
+  .descriptive-list > .descriptive-list-item:nth-child(2n) {
+    @apply bg-base-200;
+  }
+
+  .descriptive-list-item {
+    @apply p-xs;
+    @apply flex justify-between;
+  }
+
+  .descriptive-list-item > dt,
+  .descriptive-list-item > dd {
+    @apply flex-1;
+  }
+
+
+  .descriptive-list-item > dt {
+    @apply font-semibold;
+  }
+}
+
+@layer base {
+  .form input[type="text"],
+  .form input[type="tel"],
+  .form input[type="email"],
+  .form input[type="password"] {
+    @apply input input-bordered;
+  }
+
+  .form input[type="radio"] {
+    @apply radio radio-primary;
+  }
+
+  .form input[type="range"] {
+    @apply range range-primary;
+  }
+
+  .form input[type="checkbox"] {
+    @apply checkbox checkbox-primary;
+  }
+
+  .form input[type="file"] {
+    @apply file-input file-input-bordered file-input-primary;
+  }
+
+  .form input[type="submit"] {
+    @apply mt-8;
+    @apply btn btn-primary;
+  }
+
+  .form select {
+    @apply select select-bordered;
+  }
+
+  .form textarea {
+    @apply textarea textarea-bordered;
+  }
+
+  .form label {
+    @apply label justify-start gap-1;
+    @apply text-light text-sm;
+  }
+
+  .form legend {
+    @apply text-xl font-bold text-light mb-4 mt-8;
+  }
+
+  .form .input-container {
+    @apply mt-2;
+  }
+
+  .form .input-row {
+    @apply flex flex-row gap-4;
+  }
+
+  .form .input-row > * {
+    @apply flex-1;
+  }
+
+  .form span > label {
+    @apply text-base-content inline-flex gap-2;
+  }
+}

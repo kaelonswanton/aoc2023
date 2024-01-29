@@ -1,0 +1,9 @@
+<%%= simple_form_for(<%= model_resource_name %>) do |f| %>
+<% attributes.each do |attribute| -%>
+  <%%= f.input :<%= attribute.column_name %> %>
+<% end -%>
+
+  <nav>
+    <%%= f.submit %>
+  </nav>
+<%% end %>

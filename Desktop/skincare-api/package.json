@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.13",
+    "daisyui": "^3.2.1",
+    "postcss": "^8.4.25",
+    "tailwindcss": "^3.3.2",
+    "vite": "^5.0.0",
+    "vite-plugin-full-reload": "^1.0.5",
+    "vite-plugin-rails": "^0.1.0",
+    "vite-plugin-ruby": "^5.0.0",
+    "vite-plugin-stimulus-hmr": "^3.0.0"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.0.5",
+    "@hotwired/stimulus": "^3.2.1",
+    "@hotwired/turbo-rails": "^7.2.5"
+  }
+}
